@@ -100,12 +100,33 @@
 
 <details>
   <summary>Ubuntu</summary>
-  <ol>
+    
+1. intsatll x11 library for box2d libraray 
+```sh
+   sudo apt-get install libx11-dev
+```
+2. install RandR headrs for box2d library
+```sh
+   sudo apt-get install xorg-dev libglu1-mesa-dev
+```
+
+</details>
+
+
+<details>
+  <summary>MincorSoft Window Operating System</summary>
+  
+    
 1. Get a free API Key at [https://example.com](https://example.com)
+    
+
+  
 2. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
+    
+    
 3. Install NPM packages
    ```sh
    npm install
@@ -114,15 +135,15 @@
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
-  </ol>
+  
 </details>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
