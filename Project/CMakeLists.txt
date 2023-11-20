@@ -33,7 +33,7 @@ endif()
 # box2d 라이브러리 빌드 완료 후 라이브러리로 사용
 add_library(box2d_imported INTERFACE)
 add_dependencies(box2d_imported box2d)
-target_include_directories(box2d_imported INTERFACE ${box2d_SOURCE_DIR}/Box2D)
+target_include_directories(box2d_imported INTERFACE ${box2d_SOURCE_DIR}/include)  # 헤더 파일 경로 추가
 
 # GSL 라이브러리 포함
 include(FetchContent)
