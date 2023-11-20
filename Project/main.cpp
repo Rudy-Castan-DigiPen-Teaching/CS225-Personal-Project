@@ -1,13 +1,11 @@
 
 
-#include <Box2D/Box2D.h>
-#include <gsl/gsl>
 #include<iostream>
 
 int main() 
 {
-  int*p = nullptr;
-  std::cout<<p<<'\n';
+ 
+  std::cout<<0.2<<'\n';
     
 
     return 0;
