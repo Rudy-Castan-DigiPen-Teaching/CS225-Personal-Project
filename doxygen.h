@@ -2,18 +2,15 @@
  @section what_is_this_project What is This Project?
  This project is about creating a game using the concepts learned in CS225, CS200, and CS250. 
 
- @section Project Goal 
+ @section Project Project Goal 
 
  @subsection Study Physics 
  I am really bad at physics, so I decided to create my own physics library to study it \n 
 <span style="font-size: larger;">@link Physics Physics Engine @endlink</span>.\n
 
- @subsection Review CS200 & CS250
+ @subsection Review CS200 & CS250 Review
  There are a few concepts from the CS200 and CS250 courses that I didn’t fully understand and passed over. My goal this time is to study and apply those concepts.
- 
-
-
- 
+  
 */
 
 
