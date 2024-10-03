@@ -41,6 +41,16 @@ _deps
 .history
 .ionide
 
+### Doxygen ###
+Doxyfile*
+*/html/
+*/latex/
+*/xml/
+*/doc/
+*.dox
+*.doxygen
+Doxygen/
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,cmake,ninja
 Project/build/.cmake
 Project/build

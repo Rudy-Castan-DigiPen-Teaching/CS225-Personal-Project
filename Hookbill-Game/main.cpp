@@ -1,7 +1,7 @@
 #include<iostream>
-#include"core.h"
+#include<Physics-Core.h>
 int main()
 {
     std::cout<<"Hello Mother Fucker" <<'\n';
-    Hookbill::Vector3 vec3;
+    HookBill_Physics::Vector3 vec3;
 }
