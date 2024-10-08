@@ -1,7 +1,7 @@
 # PhysicsEngine/CMakeLists.txt
 
 # 라이브러리 생성
-add_library(Hookbill-Physics STATIC core.cpp)
+add_library(Hookbill-Physics STATIC Physics-Core.cpp)
 
 # 헤더 파일 경로 추가
 target_include_directories(Hookbill-Physics PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
