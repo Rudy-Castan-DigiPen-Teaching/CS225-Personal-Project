@@ -9,7 +9,8 @@
  *
  */
 #include "precision.h"
-
+#include <glm/glm.hpp>
+#include <gsl/gsl>
 namespace HookBill_Physics
 {
    class Vector3

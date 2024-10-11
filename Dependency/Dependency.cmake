@@ -1,7 +1,7 @@
 include(FetchContent)
 include(Dependency/GSL.cmake)
-
+include(Dependency/GLM.cmake)
 add_library(Dependency INTERFACE)
-target_include_directories(Dependency INTERFACE  ${GSL_SOURCE_DIR}/include)
-target_link_libraries(Dependency INTERFACE Microsoft.GSL::GSL)
+target_link_libraries(Dependency INTERFACE gsl)
+target_link_libraries(Dependency INTERFACE hookbill-glm)
 target_compile_features(Dependency INTERFACE cxx_std_17)
