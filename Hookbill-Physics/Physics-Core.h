@@ -1,3 +1,4 @@
+#pragma once
 /**
  * @file Physics-Core.h
  * @author Jinseok Son
@@ -11,6 +12,7 @@
 #include "precision.h"
 #include <glm/glm.hpp>
 #include <gsl/gsl>
+#include <iostream>
 namespace HookBill_Physics
 {
    class Vector3
@@ -122,6 +124,21 @@ namespace HookBill_Physics
        * @return return result of Cross Product
        */
       static Vector3 CrossProduct(const Vector3&v1, const Vector3&v2);
+      
+      
    }; 
-
+   
+   
+   /**
+    * @brief overload << operator for print vector element
+    * 
+    * @param os outstream 
+    * @param vector 
+    * @return std::ostream& 
+    */
+   inline std::ostream& operator<<(std::ostream&os, Vector3&vector) 
+   {
+       os<<"X : "<< vector.x<<'\n'<< "Y : "<<vector.y <<'\n'<< "Z : "<<vector.z;
+       return os;
+   }
 }

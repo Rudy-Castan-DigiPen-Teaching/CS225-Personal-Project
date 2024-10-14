@@ -1,15 +1,43 @@
+#include"Physics-Core.h"
+#include<vector>
 #include<iostream>
-#include<Physics-Core.h>
+void print_vector(std::span<int>test);
+
 int main()
 {
-    std::cout<<"Hello Mother Fucker" <<'\n';
-    HookBill_Physics::Vector3 vec_1(1.0,2.0,3.0);
-    HookBill_Physics::Vector3 vec_2(3.0,4.0,5.0); 
    
-    HookBill_Physics::Vector3 vec_3= HookBill_Physics::Vector3::CrossProduct(vec_1,vec_2);
-    std::cout<<vec_3.x<<'\n';
-    std::cout<<vec_3.y<<'\n';
-    std::cout<<vec_3.z<<'\n';
- 
+   HookBill_Physics::Vector3 vector{1.0,2.0,3.0};
+
+   std::cout<< vector <<'\n';
+   
+   gsl::owner<int*>ptr= new int(3);
+   gsl::not_null<int*>ptr1= new int(3);
+   
+
+   std::vector<int>test{1,2,3,4,5,6,7,8,9};
+   
+
+   int array[9]={1,2,3,4,5,6,7,8,9};
+   print_vector(test);
+   print_vector(array);
+
+
+
+   
 
 }
+
+//if memory is adjacent we can use span 
+void print_vector(std::span<int>test)
+{
+    for(auto it=test.begin(); it!=test.end(); it++)
+    {
+      std::cout<<*(it)<<" ";
+    }
+    std::cout<<'\n';
+}
+
+// void print_string(std::string_view&view)
+// {
+
+// }
