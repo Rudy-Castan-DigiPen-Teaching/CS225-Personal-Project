@@ -1,43 +1,25 @@
-#include"Physics-Core.h"
-#include<vector>
-#include<iostream>
-void print_vector(std::span<int>test);
+#include "spdlog/spdlog.h"
 
-int main()
+int main() 
 {
-   
-   HookBill_Physics::Vector3 vector{1.0,2.0,3.0};
-
-   std::cout<< vector <<'\n';
-   
-   gsl::owner<int*>ptr= new int(3);
-   gsl::not_null<int*>ptr1= new int(3);
-   
-
-   std::vector<int>test{1,2,3,4,5,6,7,8,9};
-   
-
-   int array[9]={1,2,3,4,5,6,7,8,9};
-   print_vector(test);
-   print_vector(array);
-
-   
-
-   
-
+    spdlog::info("Welcome to spdlog!");
+    spdlog::error("Some error message with arg: {}", 1);
+    
+    spdlog::warn("Easy padding in numbers like {:08d}", 12);
+    spdlog::critical("Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}", 42);
+    spdlog::info("Support for floats {:03.2f}", 1.23456);
+    spdlog::info("Positional args are {1} {0}..", "too", "supported");
+    spdlog::info("{:<30}", "left aligned");
+    
+    spdlog::set_level(spdlog::level::debug); // Set global log level to debug
+    spdlog::debug("This message should be displayed..");    
+    
+    // change log pattern
+    spdlog::set_pattern("[%H:%M:%S %z] [%n] [%^---%L---%$] [thread %t] %v");
+    
+    // Compile time log levels
+    // Note that this does not change the current log level, it will only
+    // remove (depending on SPDLOG_ACTIVE_LEVEL) the call on the release code.
+    SPDLOG_TRACE("Some trace message with param {}", 42);
+    SPDLOG_DEBUG("Some debug message");
 }
-
-//if memory is adjacent we can use span 
-void print_vector(std::span<int>test)
-{
-    for(auto it=test.begin(); it!=test.end(); it++)
-    {
-      std::cout<<*(it)<<" ";
-    }
-    std::cout<<'\n';
-}
-
-// void print_string(std::string_view&view)
-// {
-
-// }
