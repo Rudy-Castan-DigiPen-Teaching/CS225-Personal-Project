@@ -10,7 +10,6 @@
  *
  */
 #include "precision.h"
-#include <glm/glm.hpp>
 #include <gsl/gsl>
 #include <iostream>
 namespace HookBill_Physics
