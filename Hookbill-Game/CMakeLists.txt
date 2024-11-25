@@ -1,3 +1,4 @@
+project(Game)
 # Hookbill-Game/CMakeLists.txt
 
 add_executable(Hookbill-Game main.cpp)
@@ -10,3 +11,4 @@ target_include_directories(Hookbill-Game PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}  # Hookbill-Game의 헤더 경로
     ${CMAKE_SOURCE_DIR}/Hookbill-Engine/include
 )
+
