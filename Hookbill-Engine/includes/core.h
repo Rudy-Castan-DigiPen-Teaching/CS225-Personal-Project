@@ -1,5 +1,7 @@
 // My Goal if anyone add this header file use my engine code
 #pragma once
+#include<vector>
+#include<string>
 
 #ifdef HOOKBILL_EXPORT
 #ifdef _MSC_VER
@@ -26,4 +28,5 @@
 #define HOOKBill_STATIC_ASSERT static_assert
 #endif
 
+#define HOOKBILL_DELETE(ptr) if (ptr != nullptr) { delete (ptr); ptr = nullptr; }
 
