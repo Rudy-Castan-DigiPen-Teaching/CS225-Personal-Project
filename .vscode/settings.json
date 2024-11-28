@@ -72,6 +72,17 @@
         "gsl": "cpp",
         "cstdarg": "cpp",
         "pointers": "cpp",
-        "assert": "cpp"
+        "assert": "cpp",
+        "bitset": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "filesystem": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "queue": "cpp",
+        "ranges": "cpp",
+        "source_location": "cpp",
+        "variant": "cpp"
     }
 }

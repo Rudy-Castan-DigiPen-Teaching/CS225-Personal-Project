@@ -4,7 +4,8 @@ include(Dependency/GLM.cmake)
 include(Dependency/spdlog.cmake)
 include(Dependency/OpenGL.cmake)
 include(Dependency/GLFW.cmake)
- include(Dependency/GLEW.cmake)
+include(Dependency/GLEW.cmake)
+include(Dependency/DearImGUI.cmake)
 
 add_library(Dependency INTERFACE)
 target_link_libraries(Dependency INTERFACE gsl)
@@ -13,6 +14,6 @@ target_link_libraries(Dependency INTERFACE hookbill-spdlog)
 target_link_libraries(Dependency INTERFACE HookBill-OPENGL )
 target_link_libraries(Dependency INTERFACE HookBill_glfw )
 target_link_libraries(Dependency INTERFACE HookBill_GLEW )
-
+target_link_libraries(Dependency INTERFACE imgui )
 
 target_compile_features(Dependency INTERFACE cxx_std_17)

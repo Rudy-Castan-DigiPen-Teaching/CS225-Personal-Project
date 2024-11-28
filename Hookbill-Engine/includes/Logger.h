@@ -4,6 +4,7 @@
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include<utility>
 #include<memory>
+
 namespace HookBill
 {
     class HOOKBILL_API Logger
@@ -15,7 +16,7 @@ namespace HookBill
         {
             MyLogger_ = spdlog::stderr_color_mt("stdout");
             spdlog::set_level(spdlog::level::trace);
-            spdlog::set_pattern("%^[%T]: [#%t] %v%$");
+            spdlog::set_pattern("%^[%T] : %v%$");
         }
 
         static SPDLog& Ref()

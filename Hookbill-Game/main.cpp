@@ -1,9 +1,14 @@
 #include "Hookbill.h"
+#include"Window.h"
 #include<iostream>
 
 
     int main()
     {
-      HOOKBILL_WARN("Hello DigiPen");
+      Window window;
+      std::string name="123";
+      window.Init(name,1000,1000);
+      window.Update();
+      
     }
 
