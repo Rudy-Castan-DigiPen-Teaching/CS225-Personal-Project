@@ -6,7 +6,7 @@ class GLFWwindow;
 
     namespace ImGuiHelper
     {
-        void  Initialize();
+        void  Initialize(GLFWwindow*window);
          
         void  Begin();
         void  End();
