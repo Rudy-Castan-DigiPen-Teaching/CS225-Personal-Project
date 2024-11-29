@@ -10,18 +10,23 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(dearimgui)
 
+
+
 add_library(imgui STATIC 
     ${dearimgui_SOURCE_DIR}/imgui.cpp ${dearimgui_SOURCE_DIR}/imgui.h
     ${dearimgui_SOURCE_DIR}/imconfig.h ${dearimgui_SOURCE_DIR}/imgui_internal.h
     ${dearimgui_SOURCE_DIR}/imgui_draw.cpp
     ${dearimgui_SOURCE_DIR}/imgui_tables.cpp
     ${dearimgui_SOURCE_DIR}/imgui_widgets.cpp
-    ${dearimgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp ${dearimgui_SOURCE_DIR}/backends/imgui_impl_opengl3.h
+    ${dearimgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+    ${dearimgui_SOURCE_DIR}/backends/imgui_impl_opengl3.h
     ${dearimgui_SOURCE_DIR}/backends/imgui_impl_opengl3_loader.h
     ${dearimgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
     ${dearimgui_SOURCE_DIR}/backends/imgui_impl_glfw.h
+
     )
 
 set(IMGUI_INCLUDE_DIR ${dearimgui_SOURCE_DIR} ${dearimgui_SOURCE_DIR}/backends)
 target_include_directories(imgui SYSTEM PUBLIC ${IMGUI_INCLUDE_DIR})
-target_link_libraries(imgui PRIVATE HookBill_glfw )
+target_link_libraries(imgui PUBLIC HookBill_glfw )
+  

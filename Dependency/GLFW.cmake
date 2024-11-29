@@ -17,4 +17,4 @@ add_library(HookBill_glfw INTERFACE)
 target_link_libraries(HookBill_glfw INTERFACE glfw)
 
 # GLFW의 include 디렉토리를 프로젝트에 추가합니다.
-target_include_directories(HookBill_glfw SYSTEM INTERFACE ${glfw_SOURCE_DIR}/include)
+target_include_directories(HookBill_glfw INTERFACE  ${glfw_SOURCE_DIR}/include)

@@ -7,15 +7,17 @@
     void Window::Init(std::string windowName, size_t width, size_t height)
     {
       Setup_OPENGL_window( windowName,width,height);
-      ImGuiHelper::Initialize();
+      ImGuiHelper::Initialize(window);
     }
 
     void Window::Update()
     {        
        
-        ImGuiHelper::Begin();
+        //ImGuiHelper::Begin();
 
-        ImGuiHelper::End();
+
+        //ImGuiHelper::End();
+        //glfwSwapBuffers(window);
 
 
     }

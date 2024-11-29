@@ -1,7 +1,7 @@
 #pragma once
 #include "Core.h"
 #include"Logger.h"
- class GLFWwindow;
+ struct GLFWwindow;
 
     class HOOKBILL_API Window
     {

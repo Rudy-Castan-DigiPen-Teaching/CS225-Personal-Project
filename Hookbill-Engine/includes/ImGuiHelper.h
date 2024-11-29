@@ -2,13 +2,20 @@
 #include <core.h>
 #include <Logger.h>
 
-class GLFWwindow;
+struct GLFWwindow;
+namespace ImGuiHelper
+{
 
-    namespace ImGuiHelper
+    struct Viewport
     {
-        void  Initialize(GLFWwindow*window);
-         
-        void  Begin();
-        void  End();
+        int x = 0, y = 0;
+        int width = 0, height = 0;
+        bool operator==(const Viewport &) const = default;
+    };
 
-    }
+    void HOOKBILL_API Initialize(GLFWwindow *window);
+
+    Viewport  Begin();
+    void End();
+
+}
