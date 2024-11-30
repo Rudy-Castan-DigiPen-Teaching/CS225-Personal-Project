@@ -1,7 +1,7 @@
 #pragma once
 #include <core.h>
 #include <Logger.h>
-
+#include<imgui.h>
 struct GLFWwindow;
 namespace ImGuiHelper
 {
@@ -14,8 +14,7 @@ namespace ImGuiHelper
     };
 
     void HOOKBILL_API Initialize(GLFWwindow *window);
-
-    Viewport  Begin();
-    void End();
+    void HOOKBILL_API Begin();
+    void HOOKBILL_API End();
 
 }

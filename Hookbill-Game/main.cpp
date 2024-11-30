@@ -1,14 +1,12 @@
 #include "Hookbill.h"
-#include"Window.h"
-#include<iostream>
+#include <iostream>
 
-
-    int main()
-    {
-      Window window;
-      std::string name="123";
-      window.Init(name,1000,1000);
-      window.Update();
-      
-    }
-
+int main()
+{
+  HookBill::Engine &instance = HookBill::Engine::Instance();
+  instance.Init("Im NooB",1920,1080);
+  while (!instance.HasGameEnded())
+  {
+    instance.update();
+  }
+}

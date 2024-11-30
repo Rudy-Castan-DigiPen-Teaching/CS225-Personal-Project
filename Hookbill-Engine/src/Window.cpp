@@ -7,25 +7,18 @@
     void Window::Init(std::string windowName, size_t width, size_t height)
     {
       Setup_OPENGL_window( windowName,width,height);
-      ImGuiHelper::Initialize(window);
+      Setup_ImGui();
+      
+
     }
 
     void Window::Update()
     {        
-       
-        //ImGuiHelper::Begin();
-
-
-        //ImGuiHelper::End();
-        //glfwSwapBuffers(window);
-
-
+        glfwPollEvents();
+        glfwSwapBuffers(window);
     }
-    
-
     void Window::Setup_OPENGL_window(std::string windowName, size_t width, size_t height)
     {
-
     glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
@@ -45,11 +38,15 @@
             glfwTerminate();
         }
     }
-
+    
+     bool Window::ShouldCloseWindow()
+     {
+        return glfwWindowShouldClose(window);
+     }
 
     void Window::Setup_ImGui()
     {
-        //ImGuiHelper::Initialize(window);
+         ImGuiHelper::Initialize(window);
     }
 
 
