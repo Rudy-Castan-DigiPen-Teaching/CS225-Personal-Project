@@ -4,7 +4,7 @@
 #include<backends/imgui_impl_glfw.h>
 #include<backends/imgui_impl_opengl3.h>
 #include<imgui_internal.h>
-
+#include<GLFW/glfw3.h>
 namespace ImGuiHelper
 {
   void Initialize(GLFWwindow *window)
@@ -18,8 +18,8 @@ namespace ImGuiHelper
       io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     }
      ImGui_ImplGlfw_InitForOpenGL(window,true);
-      ImGui_ImplOpenGL3_Init("#version 460");
-     HOOKBILL_ERROR("Is this code excute?");
+     ImGui_ImplOpenGL3_Init("#version 430");
+     
   }
 
   void Begin()
@@ -28,16 +28,21 @@ namespace ImGuiHelper
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
-    
-   
    
   }
 
-  void End()
+  void End(GLFWwindow*window)
   {
     HOOKBILL_ERROR("End");
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+    const ImGuiIO& io = ImGui::GetIO();
+     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+        {
+            ImGui::UpdatePlatformWindows();
+            ImGui::RenderPlatformWindowsDefault();
+            glfwMakeContextCurrent(window);
+        }
   }
 
 }

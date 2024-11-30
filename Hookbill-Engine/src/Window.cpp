@@ -9,11 +9,13 @@
       Setup_OPENGL_window( windowName,width,height);
       Setup_ImGui();
       
+      
 
     }
 
     void Window::Update()
     {        
+        
         glfwPollEvents();
         glfwSwapBuffers(window);
     }

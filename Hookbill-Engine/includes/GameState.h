@@ -1,6 +1,7 @@
 #pragma once
 #include <core.h>
 #include <string>
+#include<ImGuiHelper.h>
 namespace HookBill
 {
     class HOOKBILL_API GameState

@@ -17,7 +17,7 @@
        
 
 
-
+       public:
        GLFWwindow*window;   
      
     };

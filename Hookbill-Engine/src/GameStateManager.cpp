@@ -1,13 +1,17 @@
 #include <GameState.h>
 #include "GameStateManager.h"
 #include "ImGuiHelper.h"
+#include<GLFW/glfw3.h>
+#include"Engine.h"
 namespace HookBill
 {
+      
     GameStateManager::GameStateManager()
     {
         state = State::START;
         currGameState = nullptr;
         nextGameState = nullptr;
+       
     }
 
     void GameStateManager::AddGameState(GameState &gameState)
@@ -25,6 +29,9 @@ namespace HookBill
                 HOOKBILL_ERROR("There is no Level !!");
                 state = State::SHUTDOWN;
             }
+            nextGameState = gameStates[0];
+            state = State::LOAD;
+           
             break;
 
         case State::LOAD:
@@ -34,18 +41,26 @@ namespace HookBill
             break;
 
         case State::UPDATE:
+             ImGuiHelper::Begin();
             if (currGameState != nextGameState)
             {
                 HOOKBILL_DEBUG("Update" + currGameState->GetName());
                 state = State::UNLOAD;
             }
 
-            ImGuiHelper::Begin();
-            //ImGui::ShowDemoWindow();
-            currGameState->Update();
-            currGameState->Draw();
-            currGameState->ImGuiDraw();
-            ImGuiHelper::End();
+            // Create a window called "My First Tool", with a menu bar.
+             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+             glClear(GL_COLOR_BUFFER_BIT);
+             currGameState->Update();
+             currGameState->Draw();
+             currGameState->ImGuiDraw();
+             
+       
+            ImGui::Begin("Simple Menu");
+            ImGui::Text("Welcome to the Simple ImGui Menu!");
+            ImGui::End();
+            ImGuiHelper::End(Engine::GetWindow().window);
+           
             break;
 
         case State::UNLOAD:
@@ -63,6 +78,7 @@ namespace HookBill
 
         case State::SHUTDOWN:
             state = State::EXIT;
+           
             break;
 
         case State::EXIT:

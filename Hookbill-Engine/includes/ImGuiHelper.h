@@ -15,6 +15,6 @@ namespace ImGuiHelper
 
     void HOOKBILL_API Initialize(GLFWwindow *window);
     void HOOKBILL_API Begin();
-    void HOOKBILL_API End();
+    void HOOKBILL_API End(GLFWwindow*window);
 
 }
