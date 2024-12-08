@@ -18,11 +18,11 @@ namespace HookBill
 	{
 	public:
 		Splash();
-		virtual void Load() override;
-		virtual void Update() override;
-		virtual void Draw()  override;
-		virtual void ImGuiDraw() override;
-		virtual void Unload() override;
+		void Load() override;
+	    void Update() override;
+		void Draw()  override;
+	    void ImGuiDraw() override;
+	    void Unload() override;
 
 		std::string GetName() override { return "Splash"; }
 

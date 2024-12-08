@@ -24,7 +24,6 @@ namespace ImGuiHelper
 
   void Begin()
   {
-    HOOKBILL_ERROR("Begin");
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
@@ -33,7 +32,7 @@ namespace ImGuiHelper
 
   void End(GLFWwindow*window)
   {
-    HOOKBILL_ERROR("End");
+  
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     const ImGuiIO& io = ImGui::GetIO();
